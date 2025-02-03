@@ -17,10 +17,10 @@ if (-not (Get-AzResourceGroup -Name $resourceGroupName -ErrorAction SilentlyCont
 }
 
 # Create Log Analytics Workspace
-$workspace = New-AzOperationalInsightsWorkspace -Location $location `
-                                                -Name $workspaceName `
-                                                -Sku PerGB2018 `
-                                                -ResourceGroupName $resourceGroupName
+New-AzOperationalInsightsWorkspace -Location $location `
+                                    -Name $workspaceName `
+                                    -Sku PerGB2018 `
+                                    -ResourceGroupName $resourceGroupName
 
 # List of solutions to add to the Log Analytics Workspace
 $solutions = @(
